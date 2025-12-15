@@ -1,0 +1,56 @@
+import { type CardType } from '@/lib/deck'
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from './ui/card'
+import { rules } from '@/data/rules'
+import { DisplayCardSymbol } from './cardSymbol'
+type PlayingCardProps = {
+  card?: CardType | null
+  faceDown?: boolean
+}
+
+export function PlayingCard({ card, faceDown = true}: PlayingCardProps) {
+  if (!card) return
+  const rule = rules[card.rank]
+  const colorClass = card.color == 'red' ? 'text-red-600' : 'text-black'
+  return (
+    <div className="w-50 aspect-5/7 perspective">
+      <div
+        className={`relative w-full h-full backface-hidden duration-500 transform-3d ${
+          faceDown ? 'rotate-y-180' : ''
+        }`}
+      >
+        <Card
+          className={`${colorClass} absolute inset w-full h-full backface-hidden justify-between text-xl`}
+        >
+          <CardHeader className="justify-start">
+            <div className="flex flex-col items-center">
+              <p>{card.rank}</p>
+              <p>{card.suit}</p>
+            </div>
+          </CardHeader>
+          <CardContent className={`self-center text-6xl`}>
+          {/*   <DisplayCardSymbol card={card}></DisplayCardSymbol> */}
+          {card.suit}
+          </CardContent>
+          <CardFooter className="justify-end">
+            <div className="flex flex-col items-center rotate-180">
+              <p>{card.rank}</p>
+              <p>{card.suit}</p>
+            </div>
+          </CardFooter>
+        </Card>
+
+        <Card className="absolute w-full h-full backface-hidden rotate-y-180 bg-blue-500 text-white flex items-center justify-center text-4xl">
+          🂠 {/* Or any back pattern */}
+        </Card>
+      </div>
+    </div>
+  )
+}
