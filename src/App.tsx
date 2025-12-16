@@ -1,14 +1,11 @@
-import { Button } from './components/ui/button'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ModeToggle } from './components/mode-toggle'
 import { GameBoard } from './components/game-board'
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from './components/ui/navigation-menu'
 
 function App() {

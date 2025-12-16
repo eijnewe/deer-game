@@ -2,7 +2,7 @@ import { GameBoard } from '@/components/game-board'
 import { Button } from '@/components/ui/button'
 import { ButtonGroup } from '@/components/ui/button-group'
 import { createFileRoute } from '@tanstack/react-router'
-import { History, Settings, UserPen } from 'lucide-react'
+import {  Settings, UserPen } from 'lucide-react'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,

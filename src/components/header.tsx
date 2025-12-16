@@ -1,10 +1,8 @@
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from './ui/navigation-menu'
 import { ModeToggle } from './mode-toggle'
 import { Link } from '@tanstack/react-router'

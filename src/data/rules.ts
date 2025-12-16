@@ -1,4 +1,12 @@
-export const rules = {
+export type Rule = {
+  title: string
+  description: string
+}
+
+export type CardRuleset = Record<Rank, Rule>
+
+
+export const rules: CardRuleset = {
   "A": {
     title: "Waterfall",
     description: "Everyone starts drinking when you start. No one can stop until the person to their right stops, continuing around the circle."
@@ -52,3 +60,11 @@ export const rules = {
     description: "Pour some of your drink into the King's cup. The player who draws the fourth King drinks the entire cup."
   }
 };
+
+
+export const deerGameRules: CardRuleset = {
+  A: { title: 'Finish Your Drink', description: 'Drink your entire cup.' },
+  '2': { title: 'Give Two', description: 'Give out two drinks.' },
+  // ...
+  K: { title: 'Deer King', description: 'Special deer rule.' },
+}
